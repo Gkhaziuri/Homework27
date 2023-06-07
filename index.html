@@ -8,26 +8,48 @@
 </head>
 <body>
     <button id="register-button">Register</button>
-    
-    <img src=" https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg" alt="">
 
 
     <div>
         <input type="">
         <button>Send your answer</button>
     </Div>
+
+    <p id="paragraph"></p>
     <script>
-        //  html ფაილში (ჯავასკრიპტით არა) შევქმნათ ღილაკი, ამ ღილაკის კლიკზე წაიშალოს თვითონ ეს ღილაკი ანუ რომ დავკლიკავ ღილაკზე გაქრეს  გამოიყენეთ ეს მეთოდი remove(
+        // N1 html ფაილში (ჯავასკრიპტით არა) შევქმნათ ღილაკი, ამ ღილაკის კლიკზე წაიშალოს თვითონ ეს ღილაკი ანუ რომ დავკლიკავ ღილაკზე გაქრეს  გამოიყენეთ ეს მეთოდი remove(
         const button = document.getElementById("register-button");
         button.addEventListener("click", function() {
             button.remove();
         });
         
-        // შექმნილი img ჩავსვათ body ში (ჯავასკრიპტით).
-        const img = document.querySelector("img");
-        img.setAttribute("img","developer")
+        // N2 შექმნილი img ჩავსვათ body ში (ჯავასკრიპტით).
+        // const image = document.createElement("img")
+        // image.setAttribute("")
+        const image = document.createElement("img");
+        image.setAttribute("src", "https://www.simplilearn.com/ice9/free_resources_article_thumb/Become_a_Front_End_Developer.jpg");
+        document.body.appendChild(image);
         
+//         დავწეროთ ფუნქცია, რომელიც დაგვიბრუნებს არგუმენტად მიღებული ხარჯების ჯამს.
+// ფუნქციას არგუმენტად გადაეცით  მასივი - productData და დათვალეთ გადაცემული მასივში amount ის ჯამი
         
+        function calculateSum(productData) {
+            let sum = 0;
+            for (let i = 0; i < productData.length; i++) {
+                sum = sum + productData[i].amount
+            }
+            return sum;
+        }
+        const productData = [
+            {product_id: 1, amount: 200},
+            {product_id: 2, amount: 300},
+            {product_id: 3, amount: 500}
+        ];
+        const result = calculateSum(productData);
+        paragraph = getElementById(paragraph);
+        paragraph.textContent = console.log("result")
+
+
     </script>
 </body>
 </html>
